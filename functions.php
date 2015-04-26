@@ -1,21 +1,75 @@
 <?php
 /**
- * @package    Trailing Spaces
+ * @package    doc
  * @author     Marty Helmick <info@martyhelmick.com>
- * @copyright  Copyright (c) 2014, Marty Helmick
- * @link       https://github.com/m-e-h/trailing-spaces
  * @license    http://www.gnu.org/licenses/gpl-2.0.html
  */
 
-/* Add the child theme setup function to the 'after_setup_theme' hook. */
-add_action( 'after_setup_theme', 'doc_child_theme_setup' );
+add_action( 'after_setup_theme', 'doc_theme_setup' );
+add_action( 'wp_enqueue_scripts', 'doc_enqueue_scripts' );
+add_action( 'widgets_init', 'doc_register_sidebars' );
+add_action( 'tha_header_before', 'doc_toggle_panel' );
+add_action( 'tha_header_bottom', 'doc_panel_toggles' );
+
+
+
 
 /**
  * Setup function.
- *
- * @since  1.0.0
- * @access public
- * @return void
  */
-function doc_child_theme_setup() {
+function doc_theme_setup() {
+
+	// Register menu for the dropdown panel.
+    register_nav_menus( [
+        'panel-dpc' => _x( 'Pastoral Center Panel Menu', 'doc' ),
+    ] );
+
+}
+
+
+
+
+/**
+ * Enqueue theme scripts.
+ */
+function doc_enqueue_scripts() {
+    $suffix = hybrid_get_min_suffix();
+
+    wp_enqueue_script( 'doc-panel', trailingslashit( get_stylesheet_directory_uri() ) . 'js/panel.js', array( 'jquery' ), null, true );
+}
+
+
+
+
+/**
+ * Register Panel Widgets.
+ */
+function doc_register_sidebars() {
+	hybrid_register_sidebar( array(
+        'id'            => 'panel-parishes',
+        'name'          => _x( 'Parish Panel Widgets', 'doc' ),
+		'before_widget' => '<section id="%1$s" class="widget widget-panel %2$s u-pr- u-pr@md u-pr+@lg u-mb- u-mb@md u-mb+@lg grid__item grid__item--flexed"><div class="br widget__wrap t-bg__1--dark">',
+		'after_widget'	=> '</div></section>',
+		'before_title'  => '<h3 class="widget-title widget-panel__title">',
+		'after_title'	=> '</h3>',
+    ) );
+	hybrid_register_sidebar( array(
+        'id'            => 'panel-schools',
+        'name'          => _x( 'School Panel Widgets', 'doc' ),
+		'before_widget' => '<section id="%1$s" class="widget widget-panel %2$s u-pr- u-pr@md u-pr+@lg u-mb- u-mb@md u-mb+@lg grid__item grid__item--flexed"><div class="br widget__wrap t-bg__1--dark">',
+		'after_widget'	=> '</div></section>',
+		'before_title'  => '<h3 class="widget-title widget-panel__title">',
+		'after_title'	=> '</h3>',
+    ) );
+}
+
+
+
+
+function doc_toggle_panel() {
+	get_template_part( 'templates/toggle-panel' );
+}
+
+function doc_panel_toggles() {
+	get_template_part( 'templates/panel-toggles' );
 }
