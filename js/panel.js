@@ -19,10 +19,10 @@ jQuery(document).ready(function($) {
 		}
 
 		function myToggleClass( $myvar ) {
-			if ( $myvar.hasClass( 'active' ) ) {
-				$myvar.removeClass( 'active' );
+			if ( $myvar.hasClass( 'is-active' ) ) {
+				$myvar.removeClass( 'is-active' );
 			} else {
-				$myvar.addClass('active');
+				$myvar.addClass('is-active');
 			}
 		}
 
@@ -36,9 +36,9 @@ jQuery(document).ready(function($) {
 			dpcNav.hide();
 			searchNav.hide();
 
-			searchToggle.removeClass('active');
-			dpcToggle.removeClass('active');
-			schoolsToggle.removeClass('active');
+			searchToggle.removeClass('is-active');
+			dpcToggle.removeClass('is-active');
+			schoolsToggle.removeClass('is-active');
 		});
 		// Display/hide social links
 		schoolsToggle.on('click', function() {
@@ -50,9 +50,9 @@ jQuery(document).ready(function($) {
 			searchNav.hide();
 			parishNav.hide();
 
-			searchToggle.removeClass('active');
-			dpcToggle.removeClass('active');
-			parishToggle.removeClass('active');
+			searchToggle.removeClass('is-active');
+			dpcToggle.removeClass('is-active');
+			parishToggle.removeClass('is-active');
 		});
 		// Display/hide menu
 		dpcToggle.on('click', function() {
@@ -64,9 +64,9 @@ jQuery(document).ready(function($) {
 			parishNav.hide();
 			schoolsNav.hide();
 
-			searchToggle.removeClass('active');
-			parishToggle.removeClass('active');
-			schoolsToggle.removeClass('active');
+			searchToggle.removeClass('is-active');
+			parishToggle.removeClass('is-active');
+			schoolsToggle.removeClass('is-active');
 		});
 		// Display/hide search
 		searchToggle.on('click', function() {
@@ -78,9 +78,9 @@ jQuery(document).ready(function($) {
 			schoolsNav.hide();
 			dpcNav.hide();
 
-			parishToggle.removeClass('active');
-			dpcToggle.removeClass('active');
-			schoolsToggle.removeClass('active');
+			parishToggle.removeClass('is-active');
+			dpcToggle.removeClass('is-active');
+			schoolsToggle.removeClass('is-active');
 		});
 	}
 	$(window).on('load', navMenu);
