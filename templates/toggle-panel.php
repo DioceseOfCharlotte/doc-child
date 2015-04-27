@@ -1,19 +1,19 @@
     <?php if ( is_active_sidebar( 'panel-parishes' ) ) : ?>
         <div id="parishes-toggle-nav" class="panel panel-parishes">
-            <div <?php hybrid_attr( 'wrap', 'panel-parishes' ); ?>>
+            <div <?php hybrid_attr( 'wrap', 'u-pt' ); ?>>
                 <?php hybrid_get_sidebar( 'panel-parishes' ); ?>
             </div>
         </div>
     <?php endif; ?>
     <?php if ( is_active_sidebar( 'panel-schools' ) ) : ?>
         <div id="schools-toggle-nav" class="panel panel-schools">
-            <div <?php hybrid_attr( 'wrap', 'panel-schools' ); ?>>
+            <div <?php hybrid_attr( 'wrap', 'u-pt' ); ?>>
                 <?php hybrid_get_sidebar( 'panel-schools' ); ?>
             </div>
         </div>
     <?php endif; ?>
     <div id="dpc-toggle-nav" class="panel panel-dpc">
-        <div <?php hybrid_attr( 'wrap', 'panel-dpc' ); ?>>
+        <div <?php hybrid_attr( 'wrap', 'u-pt' ); ?>>
             <?php hybrid_get_menu( 'panel-dpc' ); ?>
         </div>
     </div>
