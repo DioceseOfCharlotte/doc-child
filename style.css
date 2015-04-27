@@ -20,8 +20,17 @@
 }
 
 .toggle {
-    width: 50px;
-    height: 50px;
+    width: 90px;
+    height: 100%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: auto;
+}
+
+.toggle-title {
+    font-size: 13px;
 }
 
 .panel {
@@ -29,4 +38,18 @@
     position: relative;
     width: 100%; 
     margin: 0;
+}
+
+.toggle-img {
+    max-width: 48px;
+}
+
+.toggle-search {
+    width: 24px;
+    height: 24px;
+}
+
+.panel-search input[type="search"],
+.panel-search button {
+    border-radius: 0;
 }

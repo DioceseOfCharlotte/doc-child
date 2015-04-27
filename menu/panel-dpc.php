@@ -7,7 +7,7 @@
 ?>
 <?php if ( has_nav_menu( 'panel-dpc' ) ) : ?>
 
-	<nav <?php hybrid_attr( 'menu', 'panel-dpc' ); ?>>
+	<nav class="menu--horizontal u-p- u-1of1@sm flex flex-j--center" <?php hybrid_attr( 'menu', 'panel-dpc' ); ?>>
 
 		<span id="menu-panel-title" class="screen-reader-text">
 			<?php
