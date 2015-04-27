@@ -1,4 +1,4 @@
-<div class="toggles">
+<div class="toggles u-ph-">
     <?php if ( is_active_sidebar( 'panel-parishes' ) ) : ?>
         <div id="parish-toggle" class="toggle button button--tab" title="<?php esc_attr_e( 'Parishes', 'doc' ); ?>">
             <?php get_template_part( 'images/vector/svg', 'church' ); ?>
