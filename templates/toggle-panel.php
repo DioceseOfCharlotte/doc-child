@@ -17,8 +17,3 @@
             <?php hybrid_get_menu( 'panel-dpc' ); ?>
         </div>
     </div>
-    <div id="search-toggle-nav" class="panel panel-search t-bg__1--light">
-        <div class="search-wrapper wrap">
-            <?php get_search_form(); ?>
-        </div>
-    </div>

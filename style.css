@@ -20,7 +20,8 @@
 }
 
 .toggle {
-    width: 90px;
+    //width: 90px;
+    border-radius: 0;
     height: 100%;
     text-align: center;
     display: flex;
@@ -44,7 +45,7 @@
     max-width: 48px;
 }
 
-.toggle-search {
+.toggle-search__img {
     width: 24px;
     height: 24px;
 }
