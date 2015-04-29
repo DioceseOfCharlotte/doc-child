@@ -76,7 +76,7 @@ function doc_panel_toggles() {
 
 function bempress_nav_description( $item_output, $item, $depth, $args ) {
     if ( $item->description ) {
-        $item_output = str_replace( $args->link_after . '</a>', '<p class="menu-item__description">' . $item->description . '</p>' . $args->link_after . '</a>', $item_output );
+        $item_output = str_replace( $args->link_after . '</a>', '</a><a data-tip="true" class="tip--large tip--left menu-item__description info" data-tip-content="' . $item->description . '"><i class="fa fa-info-circle"></i></a>' . $args->link_after , $item_output );
     }
     return $item_output;
 }
