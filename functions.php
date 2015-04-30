@@ -8,8 +8,8 @@
 add_action( 'after_setup_theme', 'doc_theme_setup' );
 add_action( 'wp_enqueue_scripts', 'doc_enqueue_scripts' );
 add_action( 'widgets_init', 'doc_register_sidebars' );
-add_action( 'tha_header_after', 'doc_toggle_panel' );
-add_action( 'tha_header_bottom', 'doc_panel_toggles' );
+// add_action( 'tha_header_after', 'doc_toggle_panel' );
+// add_action( 'tha_header_bottom', 'doc_panel_toggles' );
 
 
 
