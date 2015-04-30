@@ -33,14 +33,6 @@
 
     <header <?php hybrid_attr( 'header' ); ?>>
 
-<svg xmlns="http://www.w3.org/2000/svg" version="1.1">
-  <defs>
-    <filter id="blur">
-      <feGaussianBlur in="SourceGraphic" stdDeviation="3" />
-    </filter>
-  </defs>
-</svg>
-
     <div class="action-bar">
         <div <?php hybrid_attr( 'wrap', 'action-bar' ); ?>>
         
@@ -68,6 +60,15 @@
         <?php tha_header_bottom(); ?>
 
         </div><!-- .wrap -->
+
+<?php if ( get_header_image() ) : ?>
+    <svg class="glass-image">
+        <image id="svg-image" class="header-image" width="<?php echo esc_attr( get_custom_header()->width ); ?>" height="<?php echo esc_attr( get_custom_header()->height ); ?>" xlink:href="<?php header_image(); ?>" />
+        <filter id="svg-blur">
+          <feGaussianBlur stdDeviation="4" />
+        </filter>
+    </svg>
+<?php endif; // End header image check. ?>
 
     </header><!-- #header -->
 
