@@ -5,7 +5,7 @@
  * @package BEMpress
  */
 
-get_header(); ?>
+get_header('home'); ?>
 
     <?php tha_content_before(); ?>
 

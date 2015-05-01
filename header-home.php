@@ -40,35 +40,35 @@
             <span></span>
             </button>
 
-            <?php get_template_part( 'templates/panel-toggles' ); ?>
+            
         </div>
     </div>
+
+             
 
         <div <?php hybrid_attr( 'wrap', 'hero' ); ?>>
 
         <?php tha_header_top(); ?>
 
-            <?php flagship_the_logo(); ?>
-
             <div <?php hybrid_attr( 'branding' ); ?>>
-                <div class="page-title__wrap u-p">
+            <div class="page-title__bg"></div>
+                <div class="page-title__wrap">
+                <?php flagship_the_logo(); ?> 
                     <?php hybrid_site_title(); ?>
                     <?php hybrid_site_description(); ?>
+                    <?php get_template_part( 'templates/panel-toggles' ); ?>
                 </div>
             </div><!-- #branding -->
 
         <?php tha_header_bottom(); ?>
 
         </div><!-- .wrap -->
-
-<?php if ( get_header_image() ) : ?>
-    <svg class="glass-image">
+                <svg class="glass-image">
         <image id="svg-image" class="header-image" width="<?php echo esc_attr( get_custom_header()->width ); ?>" height="<?php echo esc_attr( get_custom_header()->height ); ?>" xlink:href="<?php header_image(); ?>" />
         <filter id="svg-blur">
-          <feGaussianBlur stdDeviation="4" />
+          <feGaussianBlur stdDeviation="9" />
         </filter>
     </svg>
-<?php endif; // End header image check. ?>
 
     </header><!-- #header -->
 

@@ -12,17 +12,18 @@
  * Template:    bempress
  */
 
-
 .toggle {
     width: auto;
     height: 100%;
-    margin: auto; 
+    margin: auto;
     border-radius: 0;
+    padding-top: 5px;
+    padding-bottom: 5px;
     text-align: center;
 }
 
 .toggle-title {
-    display: block; 
+    display: block;
     font-size: 13px;
 }
 
@@ -52,8 +53,9 @@
 }
 
 .widget-panel .menu {
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-  font-weight: 500;
-  letter-spacing
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    font-weight: 500;
+    letter-spacing
 }
+
