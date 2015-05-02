@@ -63,7 +63,7 @@
         <?php tha_header_bottom(); ?>
 
         </div><!-- .wrap -->
-                <svg class="glass-image">
+    <svg class="glass-image">
         <image id="svg-image" class="header-image" width="<?php echo esc_attr( get_custom_header()->width ); ?>" height="<?php echo esc_attr( get_custom_header()->height ); ?>" xlink:href="<?php header_image(); ?>" />
         <filter id="svg-blur">
           <feGaussianBlur stdDeviation="9" />
