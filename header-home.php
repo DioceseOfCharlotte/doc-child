@@ -51,18 +51,20 @@
         <?php tha_header_top(); ?>
 
             <div <?php hybrid_attr( 'branding' ); ?>>
-            <div class="page-title__bg">
                 
     <svg class="glass-image">
-        <image id="svg-image" class="header-image" width="<?php echo esc_attr( get_custom_header()->width ); ?>" height="<?php echo esc_attr( get_custom_header()->height ); ?>" xlink:href="<?php header_image(); ?>" />
+        <image id="svg-image" class="header-image" xlink:href="<?php header_image(); ?>" />
         <filter id="svg-blur">
           <feGaussianBlur stdDeviation="9" />
         </filter>
     </svg>
+            <div class="page-title__bg">
 
             </div>
                 <div class="page-title__wrap">
-                <?php flagship_the_logo(); ?> 
+                <div class="logo__wrap">
+                    <?php flagship_the_logo(); ?> 
+                </div>
                     <?php hybrid_site_title(); ?>
                     <?php hybrid_site_description(); ?>
                     <?php get_template_part( 'templates/panel-toggles' ); ?>

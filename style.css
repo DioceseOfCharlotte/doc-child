@@ -12,37 +12,9 @@
  * Template:    bempress
  */
 
-.toggle {
-    width: auto;
-    height: 100%;
-    margin: auto;
-    border-radius: 0;
-    padding-top: 5px;
-    padding-bottom: 5px;
-    text-align: center;
-}
 
-.toggle-title {
-    display: block;
-    font-size: 13px;
-}
 
-.panel {
-    display: none;
-    position: relative;
-    width: 100%;
-    margin: 0;
-    z-index: 5;
-}
-
-.toggle-img {
-    display: block;
-    max-width: 48px;
-    max-height: 48px;
-    margin: 0 auto;
-}
-
-.toggle-search__img {
+/*.toggle-search__img {
     width: 24px;
     height: 24px;
 }
@@ -58,4 +30,4 @@
     font-weight: 500;
     letter-spacing
 }
-
+*/
