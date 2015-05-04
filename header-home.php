@@ -51,14 +51,17 @@
         <?php tha_header_top(); ?>
 
             <div <?php hybrid_attr( 'branding' ); ?>>
-                
+
     <svg class="glass-image">
         <image id="svg-image" class="header-image" xlink:href="<?php header_image(); ?>" />
         <filter id="svg-blur">
           <feGaussianBlur stdDeviation="9" />
         </filter>
     </svg>
+    
             <div class="page-title__bg">
+                
+
 
             </div>
                 <div class="page-title__wrap">
