@@ -51,18 +51,8 @@
         <?php tha_header_top(); ?>
 
             <div <?php hybrid_attr( 'branding' ); ?>>
-            <div class="page-title__bg"></div>
-                <div class="page-title__wrap">
-                <?php flagship_the_logo(); ?> 
-                    <?php hybrid_site_title(); ?>
-                    <?php hybrid_site_description(); ?>
-                    <?php get_template_part( 'templates/panel-toggles' ); ?>
-                </div>
-            </div><!-- #branding -->
-
-        <?php tha_header_bottom(); ?>
-
-        </div><!-- .wrap -->
+            <div class="page-title__bg">
+                
     <svg class="glass-image">
         <image id="svg-image" class="header-image" width="<?php echo esc_attr( get_custom_header()->width ); ?>" height="<?php echo esc_attr( get_custom_header()->height ); ?>" xlink:href="<?php header_image(); ?>" />
         <filter id="svg-blur">
@@ -70,7 +60,25 @@
         </filter>
     </svg>
 
+            </div>
+                <div class="page-title__wrap">
+                <?php flagship_the_logo(); ?> 
+                    <?php hybrid_site_title(); ?>
+                    <?php hybrid_site_description(); ?>
+                    <?php get_template_part( 'templates/panel-toggles' ); ?>
+                </div>
+
+            </div><!-- #branding -->
+
+        <?php tha_header_bottom(); ?>
+
+        </div><!-- .wrap -->
+
     </header><!-- #header -->
+
+    <?php if ( get_header_image() ) : ?>
+        <img class="header-image" src="<?php header_image(); ?>">
+    <?php endif; // End header image check. ?>
 
     <?php tha_header_after(); ?>
 
