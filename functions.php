@@ -6,10 +6,8 @@
  */
 
 add_action( 'after_setup_theme', 'doc_theme_setup' );
-add_action( 'wp_enqueue_scripts', 'doc_enqueue_scripts' );
 add_action( 'widgets_init', 'doc_register_sidebars' );
-add_action( 'tha_header_top', 'doc_toggle_panel' );
-add_action( 'action_bar_right', 'doc_panel_toggles' );
+
 
 
 
@@ -24,18 +22,6 @@ function doc_theme_setup() {
         'panel-dpc' => _x( 'Pastoral Center Panel Menu', 'doc' ),
     ] );
 
-}
-
-
-
-
-/**
- * Enqueue theme scripts.
- */
-function doc_enqueue_scripts() {
-    $suffix = hybrid_get_min_suffix();
-
-    wp_enqueue_script( 'doc-panel', trailingslashit( get_stylesheet_directory_uri() ) . 'js/panel.js', array( 'jquery' ), null, true );
 }
 
 
@@ -66,18 +52,5 @@ function doc_register_sidebars() {
 
 
 
-function doc_toggle_panel() {
-	get_template_part( 'templates/toggle-panel' );
-}
 
-function doc_panel_toggles() {
-	get_template_part( 'templates/panel-toggles' );
-}
 
-function bempress_nav_description( $item_output, $item, $depth, $args ) {
-    if ( $item->description ) {
-        $item_output = str_replace( $args->link_after . '</a>', '</a><a data-tip="true" class="tip--left tip--large tip--bottom menu-item__description info" data-tip-content="' . $item->description . '"><i class="fa fa-info-circle"></i></a>' . $args->link_after , $item_output );
-    }
-    return $item_output;
-}
-add_filter( 'walker_nav_menu_start_el', 'bempress_nav_description', 10, 4 );
