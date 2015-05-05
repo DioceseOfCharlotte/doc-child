@@ -6,7 +6,7 @@
 
             <?php get_template_part( 'images/vector/svg', 'church' ); ?>
 
-            <span class="toggle-title"><?php _e( 'Parishes', 'doc' ); ?></span>
+            <span class="toggle__title"><?php _e( 'Parishes', 'doc' ); ?></span>
 
         </div><!-- #parish-toggle -->
 
@@ -18,7 +18,7 @@
 
             <?php get_template_part( 'images/vector/svg', 'school' ); ?>
 
-            <span class="toggle-title"><?php _e( 'Schools', 'doc' ); ?></span>
+            <span class="toggle__title"><?php _e( 'Schools', 'doc' ); ?></span>
 
         </div><!-- #schools-toggle -->
 
@@ -28,7 +28,7 @@
 
         <?php get_template_part( 'images/vector/svg', 'library' ); ?>
 
-        <span class="toggle-title"><?php _e( 'Pastoral Center', 'doc' ); ?></span>
+        <span class="toggle__title"><?php _e( 'Pastoral Center', 'doc' ); ?></span>
 
     </div><!-- #dpc-toggle -->
 

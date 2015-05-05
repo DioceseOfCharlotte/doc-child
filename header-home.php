@@ -35,49 +35,28 @@
 
     <div class="action-bar">
         <div <?php hybrid_attr( 'wrap', 'action-bar' ); ?>>
-        
             <button class="menu-toggle" aria-controls="menu-primary" aria-expanded="false">
             <span></span>
             </button>
-
-            
         </div>
     </div>
 
-             
+        <?php tha_header_top(); ?>
 
         <div <?php hybrid_attr( 'wrap', 'hero' ); ?>>
 
-        <?php tha_header_top(); ?>
-
             <div <?php hybrid_attr( 'branding' ); ?>>
 
-    <svg class="glass-image">
-        <image id="svg-image" class="header-image" xlink:href="<?php header_image(); ?>" />
-        <filter id="svg-blur">
-          <feGaussianBlur stdDeviation="9" />
-        </filter>
-    </svg>
-    
-            <div class="page-title__bg">
-                
-
-
-            </div>
-                <div class="page-title__wrap">
-                <div class="logo__wrap">
-                    <?php flagship_the_logo(); ?> 
-                </div>
-                    <?php hybrid_site_title(); ?>
-                    <?php hybrid_site_description(); ?>
-                    <?php get_template_part( 'templates/panel-toggles' ); ?>
-                </div>
+                <?php flagship_the_logo(); ?>
+                <?php hybrid_site_title(); ?>
+                <?php hybrid_site_description(); ?>
+                <?php get_template_part( 'templates/panel-toggles' ); ?>
 
             </div><!-- #branding -->
 
-        <?php tha_header_bottom(); ?>
-
         </div><!-- .wrap -->
+
+        <?php tha_header_bottom(); ?>
 
     </header><!-- #header -->
 
