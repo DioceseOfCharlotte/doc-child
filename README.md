@@ -1,2 +1,2 @@
-# doc-child
-Child theme for Abe
+# DOC
+child theme for Bempress
