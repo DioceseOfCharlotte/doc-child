@@ -9,8 +9,9 @@
             <div <?php hybrid_attr('entry-content'); ?>>
                 <?php the_content(); ?>
                 <?php get_template_part('templates/meta-contact'); ?>
-                <?php get_template_part('templates/connected-employee'); ?>
+                <?php get_template_part('templates/meta-address'); ?>
             </div>
+                <?php get_template_part('templates/connected-employee'); ?>
 
             <footer <?php hybrid_attr('entry-footer'); ?>>
                 <?php wp_link_pages(array(
