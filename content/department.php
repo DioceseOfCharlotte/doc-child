@@ -1,10 +1,10 @@
 <?php if (have_posts()) : ?>
 
+<?php if (is_singular(get_post_type())) : ?>
+
     <?php while (have_posts()) : the_post(); ?>
 
     <article <?php hybrid_attr('post'); ?>>
-
-        <?php if (is_singular(get_post_type())) : ?>
 
             <div <?php hybrid_attr('entry-content'); ?>>
                 <?php the_content(); ?>
@@ -19,8 +19,21 @@
                     'after'  => '</p></nav>',
                 )); ?>
             </footer>
+    </article>
+
+    <?php endwhile; ?>
 
         <?php else : // If not viewing a single post. ?>
+
+        <?php echo facetwp_display( 'facet', 'department_drop' ); ?>
+
+        <?php echo facetwp_display( 'facet', 'dept_location' ); ?>
+
+<div class="facetwp-template u-1/1 flex flex-wrap flex-justify">
+
+    <?php while (have_posts()) : the_post(); ?>
+
+    <article <?php hybrid_attr('post'); ?>>
 
             <header <?php hybrid_attr('entry-header'); ?>>
                 <?php
@@ -36,17 +49,22 @@
             <div <?php hybrid_attr('entry-summary'); ?>>
                 <?php the_excerpt(); ?>
             </div>
-
-        <?php endif; // End check for posts. ?>
-
     </article>
 
     <?php endwhile; ?>
 
-    <?php the_posts_navigation( array(
-    'prev_text'          => __( 'Previous page', 'bempress' ),
-    'next_text'          => __( 'Next page', 'bempress' ),
-    ) ); ?>
+<?php endif; // End check for posts. ?>
+
+
+</div>
+    <?php
+    the_posts_pagination( array(
+    'prev_text'          => __( 'Previous page', 'twentyfifteen' ),
+    'next_text'          => __( 'Next page', 'twentyfifteen' ),
+    'before_page_number' => '<button class="bg-3">',
+    'after_page_number' => '</button>',
+) );
+ ?>
 
 <?php
 endif;

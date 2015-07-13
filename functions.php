@@ -31,7 +31,7 @@ function doc_setup() {
         // 'post'                    => '',
         'post_archive'            => 'mdl-shadow--2dp',
         //
-        //'page_header'             => 'u-1/1 center',
+        'page_header'             => 'u-1/1 center white text-shadow',
         //
         // 'entry_title'             => 'h2 mt0 color-inherit muted',
         // 'page_title'    		  => 'h1 m0',
