@@ -1,7 +1,7 @@
 <?php if( have_rows('phone') ): ?>
     <ul>
     <?php while( have_rows('phone') ): the_row(); ?>
-        <li>sub_field_1 = <?php the_sub_field('phone_type'); ?>, sub_field_2 = <?php the_sub_field('phone_number'); ?>, etc</li>
+        <li><?php the_sub_field('phone_type'); ?>: <?php the_sub_field('phone_number'); ?></li>
     <?php endwhile; ?>
     </ul>
 <?php endif; ?>
