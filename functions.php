@@ -61,7 +61,7 @@ function doc_setup() {
         // 'sidebar_left'            => 'u-1/3@md',
         //
         // 'widgets'                 => 'widget br mb2 mb3@md p2 ml1 mr1 list-reset flex-auto',
-        'primary_widgets'         => 'bg-white mdl-shadow--2dp',
+        'primary_widgets'         => 'bg-1 white color-inherit',
         // 'footer_widgets'          => 'bg-darken-1',
         //
         // // COMMENTS
