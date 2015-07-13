@@ -1,0 +1,18 @@
+/**
+ * Theme Name:  DOC
+ * Theme URI:   https://github.com/m-e-h/doc-child
+ * Description: child theme.
+ * Version:     1.0.0
+ * Author:      Marty Helmick
+ * Author URI:  https://github.com/m-e-h
+ * Tags:
+ * Domain Path: /languages/
+ * License:     GNU General Public License v2.0 or later
+ * License URI: http://www.gnu.org/licenses/gpl-2.0.html
+ * Template:    bempress
+ */
+
+ .btn-readmore {
+     margin-bottom: -20px;
+     right: 45%;
+ }
