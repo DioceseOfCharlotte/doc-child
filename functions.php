@@ -92,3 +92,55 @@ function doc_scripts() {
         false, null, true
     );
 }
+
+
+
+// FacetWP
+add_action( 'init', 'doc_init' );
+function doc_init() {
+	add_filter( 'facetwp_index_row', 'doc_facetwp_index_row' );
+	add_action( 'p2p_created_connection', 'doc_p2p_created_connection' );
+	add_action( 'p2p_delete_connections', 'doc_p2p_delete_connections' );
+}
+function doc_facetwp_index_row( $params ) {
+	global $wpdb;
+	if ( 'p2p' == $params['facet_name'] ) {
+		// get all P2P post IDs related to the current post
+		$related_post_ids = $wpdb->get_col( $wpdb->prepare( "SELECT p2p_from FROM {$wpdb->prefix}p2p
+			WHERE p2p_to = %d AND p2p_type IN ('employees_to_departments')",
+			$params['post_id']
+		) );
+		if ( !empty( $related_post_ids ) ) {
+			foreach ( $related_post_ids as $related_post_id ) {
+				// insert the index rows
+				$wpdb->query( $wpdb->prepare( "INSERT INTO {$wpdb->prefix}facetwp_index
+					(post_id, facet_name, facet_source, facet_value, facet_display_value) VALUES (%d, %s, %s, %s, %s)",
+					$params['post_id'],
+					$params['facet_name'],
+					$params['facet_source'],
+					$related_post_id,
+					get_the_title( $related_post_id )
+				) );
+			}
+		}
+		// prevent the default indexer query
+		return false;
+	}
+	return $params;
+}
+
+
+// $p2p_id an integer ID
+function doc_p2p_created_connection( $p2p_id ) {
+	$fwp = new FacetWP();
+	$connection = p2p_get_connection( $p2p_id );
+	$fwp->indexer->index( $connection->p2p_to );
+}
+// $p2p_ids is an array of IDs
+function doc_p2p_delete_connections( $p2p_ids ) {
+	$fwp = new FacetWP();
+	foreach ( $p2p_ids as $p2p_id ) {
+		$connection = p2p_get_connection( $p2p_ids );
+	   $fwp->indexer->index( $connection->p2p_to );
+	}
+}

@@ -59,8 +59,8 @@
 </div>
     <?php
     the_posts_pagination( array(
-    'prev_text'          => __( 'Previous page', 'twentyfifteen' ),
-    'next_text'          => __( 'Next page', 'twentyfifteen' ),
+    'prev_text'          => __( 'Previous page', 'bempress' ),
+    'next_text'          => __( 'Next page', 'bempress' ),
     'before_page_number' => '<button class="bg-3">',
     'after_page_number' => '</button>',
 ) );
