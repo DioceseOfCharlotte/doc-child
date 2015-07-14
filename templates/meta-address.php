@@ -1,14 +1,9 @@
-<?php if( have_rows('doc_address') ): ?>
-    <div class="acf-map">
-        <?php while ( have_rows('doc_address') ) : the_row();
-
-            $location = get_sub_field('doc_map');
-
-            ?>
-            <div class="marker" data-lat="<?php echo $location['lat']; ?>" data-lng="<?php echo $location['lng']; ?>">
-                <h4><?php the_sub_field('doc_address_type'); ?></h4>
-                <p class="address"><?php echo $location['address']; ?></p>
-            </div>
-    <?php endwhile; ?>
-    </div>
-<?php endif; ?>
+<div itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
+  <span itemprop="streetAddress">
+    <?php the_field('doc_street'); ?><br>
+    <?php the_field('doc_street_2'); ?><br>
+  </span>
+  <span itemprop="addressLocality"><?php the_field('doc_city'); ?></span>,
+  <span itemprop="addressRegion"> <?php the_field('doc_state'); ?></span>
+  <span itemprop="postalCode"> <?php the_field('doc_zip'); ?></span><br>
+</div>
