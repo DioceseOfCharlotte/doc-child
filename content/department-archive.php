@@ -11,19 +11,15 @@
         <article <?php hybrid_attr('post'); ?>>
 
                 <header <?php hybrid_attr('entry-header'); ?>>
-                    <?php
-                      get_the_image(array(
-                          'size'         => 'bempress-lg',
-                      ));
-                    ?>
+                    <?php get_the_image(array('size' => 'bempress-lg',)); ?>
                     <h2 <?php hybrid_attr('entry-title'); ?>>
                         <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
                     </h2>
                 </header>
-
                 <div <?php hybrid_attr('entry-summary'); ?>>
                     <?php the_excerpt(); ?>
                 </div>
+
         </article>
 
     <?php endwhile; ?>

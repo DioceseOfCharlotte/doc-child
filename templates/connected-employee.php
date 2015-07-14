@@ -1,5 +1,5 @@
 <?php
-$connected = new WP_Query( array(
+$connected = new WP_Query(array(
     'connected_type'  => 'employees_to_departments',
     'connected_items' => get_queried_object(),
     'nopaging'        => true,
